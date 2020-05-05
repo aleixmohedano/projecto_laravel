@@ -24,7 +24,7 @@ class HomeController extends Controller
 
 
         }else{
-      //  $request->user()->authorizeRoles(['user', 'admin']);
+      //  $request->admin()->authorizeRoles(['admin', 'admin']);
         return view('home',compact('properties'));
 
 
@@ -33,7 +33,7 @@ class HomeController extends Controller
     /*
         public function someAdminStuff(Request $request)
         {
-            $request->user()->authorizeRoles(‘admin’);
+            $request->admin()->authorizeRoles(‘admin’);
             return view(‘some.view’);
         }
         */

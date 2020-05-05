@@ -65,7 +65,11 @@
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
                             </li>
-
+                            @if(Auth::user()->hasRole('admin'))
+                            <li class="nav-item ">
+                                <a class="nav-link" href="{{ route('administrador.index') }}">Usuarios</a>
+                            </li>
+                            @endif
                             <li class="nav-item ">
                                 <a class="nav-link" href="{{ route('propiedades.index') }}">Propiedades</a>
                             </li>

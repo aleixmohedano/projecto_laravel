@@ -13,23 +13,13 @@
                 <th>rol</th>
                 <th></th>
             </tr>
-            @foreach($users as $user)
+                <tr>
+                    <td>{{$users->name}}</td>
+                    <td>{{$users->email}}</td>
+                    <td>{{$users->password}}</td>
+                    <td>{{$users->roles->name}}</td>
 
-                    <tr>
-                        <td>{{$user->name}}</td>
-                        <td>{{$user->email}}</td>
-                        <td>{{$user->password}}</td>
-                        <td>{{$user->rol}}</td>
-                        <td><form action="{{route('usuarios.destroy', $user->id)}}"method="POST">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-primary">Eliminar</button>
-                            </form></td>
-                    </tr>
-
-            @endforeach
-            <td><a class="btn btn-primary" href="{{route('propiedades.create')}}">create</a></td>
-
+                </tr>
             </thead>
         </table>
 

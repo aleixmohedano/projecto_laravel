@@ -23,7 +23,10 @@ Route::get('/', 'HomeController@index')->name('home');
 
 Route::resource('propiedades', 'PropertyController');
 
-Route::resource('usuarios', 'AdminController');
+Route::resource('administrador', 'AdminController');
+
+Route::resource('usuarios', 'UserController');
+
 
 
 Route::get( 'salir', function(){

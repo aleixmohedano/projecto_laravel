@@ -15,10 +15,12 @@ class AdminController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+
+        $request->user()->authorizeRoles('admin');
         $users = User::all();
-        return view('user.index',compact('users'));
+        return view('admin.index',compact('users'));
     }
 
     /**
@@ -28,7 +30,7 @@ class AdminController extends Controller
      */
     protected function create(Request $request)
     {
-        return view('user.create');
+        return view('admin.create');
 
     }
     /**
@@ -48,7 +50,7 @@ class AdminController extends Controller
         $user
             ->roles()
             ->attach(Role::where('name', $rol)->first());
-        return redirect()->route('usuarios.index');
+        return redirect()->route('administrador.index');
     }
 
     /**
@@ -95,6 +97,6 @@ class AdminController extends Controller
     {
         $users=User::find($id);
         $users->delete();
-        return redirect()->route('usuarios.index');
+        return redirect()->route('administrador.index');
     }
 }

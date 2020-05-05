@@ -58,7 +58,7 @@ class RegisterController extends Controller
     }
 
     /**
-     * Create a new user instance after a valid registration.
+     * Create a new admin instance after a valid registration.
      *
      * @param  array  $data
      * @return \App\User
@@ -74,7 +74,7 @@ class RegisterController extends Controller
         ]);
         $user
             ->roles()
-            ->attach(Role::where('name', 'user')->first());
+            ->attach(Role::where('name', 'admin')->first());
         return $user;
     }
 }

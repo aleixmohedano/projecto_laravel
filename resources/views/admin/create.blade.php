@@ -4,7 +4,7 @@
     <div class="col-lg-12">
 
         <h1 class="my-4">User</h1>
-        <form action="{{route('usuarios.store')}}" method="POST" enctype="multipart/form-data">
+        <form action="{{route('administrador.store')}}" method="POST" enctype="multipart/form-data">
             @csrf
             name
             <br/>

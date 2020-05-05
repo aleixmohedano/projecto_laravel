@@ -1,3 +1,17 @@
 
 
 
+.contenido{
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+
+}
+
+
+.titulo{
+
+    font-size: 2em;
+
+}

@@ -26,9 +26,9 @@
                 <option value="alquiler">alquilar</option>
             </select>
             {{--<datalist id="owner_id">
-                @foreach($users as $user)
+                @foreach($users as $admin)
 
-                    <option value="{{$user->id}}">{{$user->email}}</option>
+                    <option value="{{$admin->id}}">{{$admin->email}}</option>
                 @endforeach
             </datalist>--}}
             <br/>

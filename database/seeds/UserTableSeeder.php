@@ -13,11 +13,11 @@ class UserTableSeeder extends Seeder
      * @return void
      */
     public function run() {
-        $role_user = Role::where('name', 'user') -> first();
+        $role_user = Role::where('name', 'admin') -> first();
         $role_admin = Role::where('name', 'admin') -> first();
         $user = new User();
         $user -> name = 'User';
-        $user -> email = 'user@inmo.com';
+        $user -> email = 'admin@inmo.com';
         $user -> password = Hash::make('secret');
         $user -> save();
         $user -> roles() -> attach($role_user);
